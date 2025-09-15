@@ -2,7 +2,7 @@
 
 ## 📌 Overview
 
-SE Project React is a front-end application built with **React** that allows users to interact with an external API, view dynamic data, and manage personalized content. The project emphasizes component-based design, modern styling practices, and clean file organization.
+SE Project React is a front-end application built with **React** that allows users to look for the weather forecast in their area. The app helps the user decide what clothing to wear based on the information provided by the Openweather API. The project emphasizes component-based design, modern styling practices, and clean file organization.
 
 ---
 
@@ -29,9 +29,7 @@ SE Project React is a front-end application built with **React** that allows use
 ## 🔗 API Interactive Functionality
 
 - Fetches data dynamically from an external API.
-- Allows secure interaction with endpoints (GET, POST, PATCH, DELETE).
 - Provides error handling for failed requests.
-- Syncs UI state with server data to keep the app reactive.
 
 ---
 
@@ -40,24 +38,20 @@ SE Project React is a front-end application built with **React** that allows use
 1. **User loads app** → React initializes UI components.
 2. **API requests sent** → Fetch user data, cards, or other resources.
 3. **Data rendered dynamically** → Updates React state for real-time display.
-4. **User interactions** → Likes, edits, or deletions trigger API calls.
-5. **UI updates** → Reflects latest server-side changes instantly.
+4. **UI updates** → Reflects latest server-side changes instantly.
 
 ---
 
 ## 🌐 API Base and Auth
 
-- **Base URL**: Configurable via `.env`.
 - **Authentication**: Uses API key/token stored in environment variables.
 - **Headers**: JSON format (`Content-Type: application/json`).
-- **Endpoints include**:
-  - `GET /users/me` → Retrieve user info
-  - `PATCH /users/me` → Update profile
-  - `GET /cards` → Fetch items/cards
-  - `POST /cards` → Add new item
-  - `DELETE /cards/:id` → Remove item
-  - `PUT /cards/:id/likes` → Like an item
-  - `DELETE /cards/:id/likes` → Unlike an item
+
+---
+
+**GitHub**
+
+- [Link to the project on GitHub](https://github.com/thegrindnet/se_project_react)
 
 ---
 
