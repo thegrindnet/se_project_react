@@ -34,11 +34,11 @@ export const weatherOptions = [
     condition: "Clear",
     url: new URL("../assets/night/clear.svg", import.meta.url).href,
   },
-  // {
-  //   day: false,
-  //   condition: "Clouds",
-  //   url: new URL("../assets/night/clouds.svg", import.meta.url).href,
-  // },
+  {
+    day: false,
+    condition: "Clouds",
+    url: new URL("../assets/night/clouds.svg", import.meta.url).href,
+  },
   {
     day: false,
     condition: "Fog",
