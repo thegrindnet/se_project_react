@@ -8,6 +8,7 @@ function ModalWithForm({ children, buttonText, title, activeModal, onClose }) {
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
         <button
+          aria-label="Close form modal"
           onClick={onClose}
           className="modal__close-btn"
           type="button"

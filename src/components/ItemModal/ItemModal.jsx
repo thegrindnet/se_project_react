@@ -5,6 +5,7 @@ function ItemModal({ activeModal, onClose, card }) {
     <div className={`modal ${activeModal === "preview" && "modal__opened"}`}>
       <div className="modal__content modal__content_type_image">
         <button
+          aria-label="Close item modal"
           onClick={onClose}
           className="modal__close-btn"
           type="button"
