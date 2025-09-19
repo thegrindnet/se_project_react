@@ -70,7 +70,7 @@ export const defaultWeatherOptions = {
   },
 };
 
-const defaultClothingItems = [
+export const defaultClothingItems = [
   {
     _id: 1,
     name: "Boot",
@@ -176,4 +176,4 @@ export const coordinates = {
 
 export const APIkey = "a9b88a473ea2498ae8aec36d9859970e";
 
-export { defaultClothingItems };
+// export { defaultClothingItems };
