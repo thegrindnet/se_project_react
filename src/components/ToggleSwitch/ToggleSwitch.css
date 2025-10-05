@@ -4,13 +4,14 @@
   outline: 2px solid rgba(126, 126, 126, 1);
   border-radius: 20px;
   cursor: pointer;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   margin: 0 20px 0 auto;
 }
 
 .toggle-switch:hover {
   outline: 2px solid #000;
+  overflow: hidden;
 }
 
 .toggle-switch:hover > .toggle-switch__circle {
@@ -37,7 +38,6 @@
   font-weight: 700;
   font-size: 14px;
   color: rgba(126, 126, 126, 1);
-  /* z-index: 1; */
   top: 3px;
 }
 
