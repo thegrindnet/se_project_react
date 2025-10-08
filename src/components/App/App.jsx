@@ -7,7 +7,7 @@ import {
 } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
+// import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
@@ -41,6 +41,21 @@ function App() {
     setActiveModal("add-garment");
   };
 
+  const onAddItem = (inputValues) => {
+    //call the fetch function
+    // .then((data) => {}).. includes all the stuff below
+    const newCardData = {
+      name: inputValues.name,
+      link: inputValues.link,
+      weather: inputValues.weather,
+    };
+    // Don't use newCardData
+    // the ID will be included in the response data
+    setClothingItems([...clothingItems, newCardData]);
+    closeActiveModal();
+    // .catch()
+  };
+
   const closeActiveModal = () => {
     setActiveModal("");
   };
@@ -69,12 +84,17 @@ function App() {
             handleCardClick={handleCardClick}
           />
         </div>
-        <ModalWithForm
+        {/* <ModalWithForm
           title="New garment"
           buttonText="Add garment"
           isOpen={activeModal === "add-garment"}
           onClose={closeActiveModal}
-        ></ModalWithForm>
+        ></ModalWithForm> */}
+        <AddItemModal
+          onClose={closeActiveModal}
+          isOpen={activeModal === "add-garment"}
+          onAddItem={onAddItem}
+        ></AddItemModal>
         <ItemModal
           activeModal={activeModal}
           card={selectedCard}
