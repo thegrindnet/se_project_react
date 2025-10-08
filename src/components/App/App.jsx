@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./App.css";
 import {
@@ -78,11 +79,20 @@ function App() {
       <div className="page">
         <div className="page__content">
           <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-          <Main
-            weatherData={weatherData}
-            clothingItems={clothingItems}
-            handleCardClick={handleCardClick}
-          />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main
+                  weatherData={weatherData}
+                  clothingItems={clothingItems}
+                  handleCardClick={handleCardClick}
+                />
+              }
+            />
+            <Route path="/profile" element={<p>PROFILE</p>} />
+          </Routes>
+          <Footer />
         </div>
         {/* <ModalWithForm
           title="New garment"
@@ -100,7 +110,7 @@ function App() {
           card={selectedCard}
           onClose={closeActiveModal}
         />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </CurrentTemperatureUnitContext.Provider>
   );
