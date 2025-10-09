@@ -10,6 +10,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 // import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
+import Profile from "../Profile/Profile";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
@@ -90,7 +91,15 @@ function App() {
                 />
               }
             />
-            <Route path="/profile" element={<p>PROFILE</p>} />
+            <Route
+              path="/profile"
+              element={
+                <Profile
+                  onCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
+            />
           </Routes>
           <Footer />
         </div>
