@@ -1,11 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./App.css";
-import {
-  coordinates,
-  APIkey,
-  // defaultClothingItems,
-} from "../../utils/constants";
+import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import ItemModal from "../ItemModal/ItemModal";
@@ -14,7 +10,7 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import { addItem, getItems } from "../../utils/api";
+import { addItem, getItems, removeItem } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -27,6 +23,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [clothingItems, setClothingItems] = useState([]);
+  // const [cardToDelete, setCardToDelete] = useState(null);
 
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
@@ -41,6 +38,22 @@ function App() {
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
+  };
+
+  const handleDeleteClick = (card) => {
+    const id = card._id;
+    const filteredArr = clothingItems.filter((item) => {
+      return item._id != id;
+    });
+
+    console.log(filteredArr);
+
+    removeItem(id)
+      .then(() => {
+        setClothingItems(filteredArr);
+        closeActiveModal(card);
+      })
+      .catch(console.error);
   };
 
   const onAddItem = (inputValues) => {
@@ -125,8 +138,8 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModal}
+          handleDeleteClick={handleDeleteClick}
         />
-        {/* <Footer /> */}
       </div>
     </CurrentTemperatureUnitContext.Provider>
   );

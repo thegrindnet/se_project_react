@@ -103,8 +103,14 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "name": "New Item 1",
-      "imageUrl": "https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg",
+      "name": "Funny Sweatshirt",
+      "imageUrl": "https://i.ebayimg.com/images/g/J10AAOSw~Dpdzddf/s-l1200.jpg",
+      "weather": "warm",
+      "_id": 17
+    },
+    {
+      "name": "I'm Here Sweatshirt",
+      "imageUrl": "https://m.media-amazon.com/images/I/814rZabxXGL._UY350_.jpg",
       "weather": "warm",
       "_id": 18
     }
