@@ -37,6 +37,7 @@ function App() {
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
+    console.log("Getting close to opening the addItemModal");
   };
 
   const handleDeleteClick = (card) => {
@@ -114,6 +115,7 @@ function App() {
                 <Profile
                   onCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                  handleAddClick={handleAddClick}
                 />
               }
             />
