@@ -113,6 +113,23 @@
       "imageUrl": "https://m.media-amazon.com/images/I/814rZabxXGL._UY350_.jpg",
       "weather": "warm",
       "_id": 18
+    },
+    {
+      "name": "Hot Innit Tee",
+      "imageUrl": "https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C41NhQjNvYHL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_UY1000_.png",
+      "weather": "warm",
+      "_id": 19
+    },
+    {
+      "name": "Freaking Hot Tee",
+      "imageUrl": "https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C51hOl-17q1L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_UY1000_.png",
+      "weather": "warm",
+      "_id": 20
+    },
+    {
+      "name": "Hot Innit Tee",
+      "imageUrl": "https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C41NhQjNvYHL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_UY1000_.png",
+      "_id": 21
     }
   ]
 }

@@ -3,11 +3,12 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const defaultValues = { name: "", imageUrl: "", weatherType: "" };
-  const { values, handleChange } = useForm(defaultValues);
+  const { values, handleChange, setValues } = useForm(defaultValues);
 
   function handleSubmit(evt) {
     evt.preventDefault();
     onAddItem(values);
+    setValues(defaultValues);
   }
 
   return (
