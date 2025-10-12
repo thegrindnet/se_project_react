@@ -65,6 +65,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             id="warm"
             type="radio"
             className="modal__radio-input"
+            checked={values.weather === "warm"}
             name="weather"
             value="warm"
             onChange={handleChange}

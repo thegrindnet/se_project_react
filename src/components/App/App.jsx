@@ -23,7 +23,6 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [clothingItems, setClothingItems] = useState([]);
-  // const [cardToDelete, setCardToDelete] = useState(null);
 
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
@@ -45,8 +44,6 @@ function App() {
     const filteredArr = clothingItems.filter((item) => {
       return item._id != id;
     });
-
-    console.log(filteredArr);
 
     removeItem(id)
       .then(() => {
@@ -123,12 +120,6 @@ function App() {
           </Routes>
           <Footer />
         </div>
-        {/* <ModalWithForm
-          title="New garment"
-          buttonText="Add garment"
-          isOpen={activeModal === "add-garment"}
-          onClose={closeActiveModal}
-        ></ModalWithForm> */}
         <AddItemModal
           onClose={closeActiveModal}
           isOpen={activeModal === "add-garment"}
