@@ -11,7 +11,7 @@ export default function Profile({
     <section className="profile">
       <SideBar />
       <ClothesSection
-        onCardClick={handleCardClick}
+        handleCardClick={handleCardClick}
         clothingItems={clothingItems}
         handleAddClick={handleAddClick}
       />

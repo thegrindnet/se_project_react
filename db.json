@@ -103,18 +103,6 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "name": "Funny Sweatshirt",
-      "imageUrl": "https://i.ebayimg.com/images/g/J10AAOSw~Dpdzddf/s-l1200.jpg",
-      "weather": "warm",
-      "_id": 17
-    },
-    {
-      "name": "I'm Here Sweatshirt",
-      "imageUrl": "https://m.media-amazon.com/images/I/814rZabxXGL._UY350_.jpg",
-      "weather": "warm",
-      "_id": 18
-    },
-    {
       "name": "Hot Innit Tee",
       "imageUrl": "https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C41NhQjNvYHL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_UY1000_.png",
       "_id": 21
