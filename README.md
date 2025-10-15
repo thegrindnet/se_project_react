@@ -55,6 +55,12 @@ SE Project React is a front-end application built with **React** that allows use
 
 ---
 
+## Project Pitch Video
+
+Check out [this video](https://www.loom.com/share/e8f0ffea62e74ba2a15068268299fa12?sid=690cc281-6026-4b07-a63a-616178a89c76), where I describe my project and some challenges I faced while building it.
+
+---
+
 ## 🛠️ Plan on Improving the Project
 
 - Add **user authentication (login/signup)** for personalized experiences.
