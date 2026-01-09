@@ -5,7 +5,7 @@ function ModalWithForm({
   buttonText,
   title,
   isOpen,
-  onClose,
+  closeActiveModal,
   onSubmit,
 }) {
   return (
@@ -14,7 +14,7 @@ function ModalWithForm({
         <h2 className="modal__title">{title}</h2>
         <button
           aria-label="Close form modal"
-          onClick={onClose}
+          onClick={closeActiveModal}
           className="modal__close-btn"
           type="button"
         ></button>
