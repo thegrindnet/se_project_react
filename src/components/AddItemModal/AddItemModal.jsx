@@ -1,13 +1,13 @@
 import { useForm } from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const AddItemModal = ({ isOpen, handleAddItemSubmit, closeActiveClose }) => {
+const AddItemModal = ({ isOpen, handleAddItemSubmit, closeActiveModal }) => {
   const defaultValues = { name: "", imageUrl: "", weather: "" };
   const { values, handleChange, setValues } = useForm(defaultValues);
 
-  function handleAddItemSubmit(evt) {
+  function handleSubmit(evt) {
     evt.preventDefault();
-    onAddItem(values);
+    handleAddItemSubmit(values);
     setValues(defaultValues);
   }
 
@@ -16,8 +16,8 @@ const AddItemModal = ({ isOpen, handleAddItemSubmit, closeActiveClose }) => {
       title="New garment"
       buttonText="Add garment"
       isOpen={isOpen}
-      closeActiveModal={closeActiveClose}
-      handleAddItemSubmit={handleAddItemSubmit}
+      closeActiveModal={closeActiveModal}
+      onSubmit={handleSubmit}
     >
       <label htmlFor="clothing-name" className="modal__label">
         Name{" "}
