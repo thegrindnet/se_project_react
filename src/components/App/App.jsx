@@ -1,5 +1,6 @@
-import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
@@ -82,9 +83,10 @@ function App() {
           setCurrentUser(user);
           setIsLoggedIn(true);
         })
-        .catch(() => {
+        .catch((err) => {
+          console.error("Token validation failed:", err);
           localStorage.removeItem("jwt");
-          setIsLoggedIn(false);
+          // setIsLoggedIn(false);
         });
     }
   }, []);
@@ -118,6 +120,7 @@ function App() {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
     setCurrentUser(null);
+    Navigate("/");
   };
 
   const handleCardLike = ({ id, isLiked }) => {
@@ -177,6 +180,7 @@ function App() {
 
   const handleAddItemSubmit = (inputValues) => {
     const token = localStorage.getItem("jwt");
+
     const newCardData = {
       name: inputValues.name,
       imageUrl: inputValues.imageUrl,
@@ -270,7 +274,7 @@ function App() {
                       handleAddClick={handleAddClick}
                       onEditProfile={handleEditProfileClick}
                       onLogout={handleLogout}
-                      isLoggedIn={isLoggedIn}
+                      // isLoggedIn={isLoggedIn}
                       onCardLike={handleCardLike}
                     />
                   </ProtectedRoute>
