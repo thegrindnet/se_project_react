@@ -167,12 +167,12 @@ function App() {
     signin({ email, password })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
-        setIsLoggedIn(true);
-        return checkToken(res.token);
+        // setIsLoggedIn(true);
+        return getUserData(res.token);
       })
       .then((userData) => {
         setCurrentUser(userData);
-        // setIsLoggedIn(true);
+        setIsLoggedIn(true);
         closeActiveModal();
       })
       .catch(console.error);
