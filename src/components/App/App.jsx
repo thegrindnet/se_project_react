@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
@@ -50,6 +51,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
+  const navigate = useNavigate();
   // useEffect to fetch today
 
   useEffect(() => {
@@ -313,7 +315,7 @@ function App() {
             isOpen={activeModal === "login-user"}
             closeActiveModal={closeActiveModal}
             onLoginModalSubmit={handleLogin}
-            // activeModal={activeModal}
+            activeModal={activeModal}
             loginClick={handleLoginClick}
             handleSignupClick={handleSignupClick}
             onSecondButtonClick={onSecondaryButtonClick}

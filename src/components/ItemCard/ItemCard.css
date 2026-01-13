@@ -5,20 +5,44 @@
   justify-content: center;
 }
 
-.card__name {
+.card__name-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: 100%;
   position: absolute;
   top: 15px;
-  margin: 0;
+}
+
+.card__name {
   background-color: #fff;
   padding: 2px 12px;
   border-radius: 4px;
   font-size: 16px;
   font-weight: 700;
+  line-height: 20px;
   color: rgba(0, 0, 0, 0.6);
+  margin: 0 auto;
+  text-align: center;
 }
 
 .card__image {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
+}
+
+.card__like-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  /* position: absolute;
+  top: 17px;
+  right: 100px; */
+}
+
+.card__like-icon {
+  width: 20px;
+  height: 20px;
 }
