@@ -1,21 +1,21 @@
 import "./ItemCard.css";
 import dislikeHeart from "../../assets/State=Default.svg";
 import likeHeart from "../../assets/State=Liked.svg";
-import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function ItemCard({ item, onCardClick, onCardLike }) {
-  const currentUser = useContext(CurrentUserContext);
+import { useContext } from "react";
 
+function ItemCard({ item, onCardClick, onCardLike, isLoggedIn }) {
+  const currentUser = useContext(CurrentUserContext);
   const isLiked = item.likes?.some((id) => id === currentUser?._id);
 
-  const itemLikeButtonClassName = `like-button ${
-    isLiked ? "like-button_active" : "like-button"
+  const itemLikeButtonClassName = `card__like-btn ${
+    isLiked ? "card__like-btn_active" : ""
   }`;
 
-  const handleLike = (e) => {
-    e.stopPropagation();
-    onCardLike({ id: item._id, isLiked });
+  const handleLike = () => {
+    if (!isLoggedIn) return;
+    onCardLike({ id: item._id, isLiked, user: currentUser });
   };
 
   const handleCardClick = () => {
@@ -26,8 +26,13 @@ function ItemCard({ item, onCardClick, onCardLike }) {
     <li className="card">
       <div className="card__name-container">
         <h2 className="card__name">{item.name}</h2>
-        {currentUser && (
-          <button className="card__like-btn" type="button" onClick={handleLike}>
+        {isLoggedIn && (
+          <button
+            className={itemLikeButtonClassName}
+            type="button"
+            onClick={handleLike}
+            aria-pressed={isLiked}
+          >
             <img
               src={isLiked ? likeHeart : dislikeHeart}
               alt={isLiked ? "Unlike item" : "Like item"}

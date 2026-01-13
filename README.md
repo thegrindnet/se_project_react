@@ -70,6 +70,9 @@ Check out [this video](https://www.loom.com/share/e8f0ffea62e74ba2a15068268299fa
 - Enhance **UI/UX** with light/dark mode themes.
 - Optimize performance with **React.lazy** and code splitting.
 
+<!-- https://github.com/enyberg09/se_project_react -->
+<!-- https://github.com/enyberg09/se_project_express -->
+
 <!-- REFERENCE THIS EXAMPLE (ON TASK 2)-->
 <!-- https://github.com/Jonathan-Brandt/se_project_react/blob/master/src/components/RegisterModal/RegisterModal.jsx -->
 <!-- https://github.com/Jonathan-Brandt/se_project_express -->

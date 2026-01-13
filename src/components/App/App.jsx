@@ -121,6 +121,7 @@ function App() {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
     setCurrentUser({});
+    navigate("/");
   };
 
   const handleCardLike = ({ id, isLiked }) => {
@@ -134,7 +135,7 @@ function App() {
             );
           })
           .catch((err) => console.error(err))
-      : removeItem(id, token)
+      : removeCardLike(id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((card) => (card._id === id ? updatedCard : card))
@@ -294,12 +295,13 @@ function App() {
           <ItemModal
             activeModal={activeModal}
             card={selectedCard}
-            closeActiveClose={closeActiveModal}
+            closeActiveModal={closeActiveModal}
             handleDeleteClick={handleDeleteClick}
             selectedCard={selectedCard}
-            onLoginModalSubmit={handleLogin}
-            // onSecondaryButtonClick={onSecondaryButtonClick}
-            // isOpen={activeModal === "login-user"}
+            currentUser={currentUser}
+            isOpen={activeModal === "preview"}
+            // isLoggedIn={isLoggedIn}
+            onCardLike={handleCardLike}
           />
 
           <RegisterModal

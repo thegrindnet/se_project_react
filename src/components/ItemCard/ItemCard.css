@@ -37,12 +37,13 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  /* position: absolute;
-  top: 17px;
-  right: 100px; */
 }
 
-.card__like-icon {
+.card__like-btn_active {
+  opacity: 0.9;
+}
+
+.card .card__like-icon {
   width: 20px;
   height: 20px;
 }
