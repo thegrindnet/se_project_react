@@ -39,7 +39,7 @@ export default function LoginModal({
     <ModalWithForm
       title="Log In"
       buttonText="Log In"
-      SecondButtonText={"or Sign Up"}
+      secondButtonText={"or Register"}
       closeActiveModal={closeActiveModal}
       isOpen={isOpen}
       onSubmit={handleSubmit}
@@ -67,6 +67,8 @@ export default function LoginModal({
           className="modal__input"
           id="password"
           placeholder="Enter your password"
+          minLength={8}
+          maxLength={16}
           value={password}
           onChange={handlePasswordChange}
           required

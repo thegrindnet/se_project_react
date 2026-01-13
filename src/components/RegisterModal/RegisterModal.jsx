@@ -5,7 +5,7 @@ export default function RegisterModal({
   isOpen,
   closeActiveModal,
   onSubmit,
-  // onSecondaryButtonClick,
+  onSecondButtonClick,
   handleSignupClick,
 }) {
   const [name, setName] = useState("");
@@ -51,10 +51,10 @@ export default function RegisterModal({
       isOpen={isOpen}
       closeActiveModal={closeActiveModal}
       onSubmit={handleSubmit}
-      // secondaryButtonText="Log In"
-      // onSecondaryButtonClick={onSecondaryButtonClick}
+      secondButtonText="or Log in"
+      onSecondButtonClick={onSecondButtonClick}
       handleSignupClick={handleSignupClick}
-      noValidate
+      // noValidate
     >
       <label htmlFor="email" className="modal__label">
         Email*

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Navigate, useNavigate } from "react-router-dom";
 
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
@@ -119,8 +118,7 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
-    setCurrentUser(null);
-    Navigate("/");
+    setCurrentUser({});
   };
 
   const handleCardLike = ({ id, isLiked }) => {
@@ -227,14 +225,14 @@ function App() {
       .catch(console.error);
   };
 
-  // const onSecondaryButtonClick = () => {
-  //   if (activeModal === "login-user") {
-  //     setActiveModal("new-user");
-  //   }
-  //   if (activeModal === "new-user") {
-  //     setActiveModal("login-user");
-  //   }
-  // };
+  const onSecondaryButtonClick = () => {
+    if (activeModal === "login-user") {
+      setActiveModal("new-user");
+    }
+    if (activeModal === "new-user") {
+      setActiveModal("login-user");
+    }
+  };
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -272,9 +270,10 @@ function App() {
                       clothingItems={clothingItems}
                       handleCardClick={handleCardClick}
                       handleAddClick={handleAddClick}
+                      currentUser={currentUser}
                       onEditProfile={handleEditProfileClick}
                       onLogout={handleLogout}
-                      // isLoggedIn={isLoggedIn}
+                      isLoggedIn={isLoggedIn}
                       onCardLike={handleCardLike}
                     />
                   </ProtectedRoute>
@@ -305,19 +304,19 @@ function App() {
             isOpen={activeModal === "new-user"}
             closeActiveModal={closeActiveModal}
             onSubmit={handleRegistration}
-            // activeModal={activeModal}
+            activeModal={activeModal}
             handleSignupClick={handleSignupClick}
-            // onSecondaryButtonClick={onSecondaryButtonClick}
+            onSecondButtonClick={onSecondaryButtonClick}
           />
 
           <LoginModal
             isOpen={activeModal === "login-user"}
             closeActiveModal={closeActiveModal}
             onLoginModalSubmit={handleLogin}
-            activeModal={activeModal}
+            // activeModal={activeModal}
             loginClick={handleLoginClick}
             handleSignupClick={handleSignupClick}
-            // onSecondButtonClick={onSecondaryButtonClick}
+            onSecondButtonClick={onSecondaryButtonClick}
           />
 
           <EditProfileModal
