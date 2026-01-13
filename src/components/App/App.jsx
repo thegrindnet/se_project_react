@@ -3,7 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import { Navigate, useNavigate } from "react-router-dom";
 
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
-import { coordinates, APIkey } from "../../utils/constants";
+import {
+  coordinates,
+  APIkey,
+  defaultClothingItems,
+} from "../../utils/constants";
 import {
   addItem,
   getItems,
@@ -128,14 +132,16 @@ function App() {
     const token = localStorage.getItem("jwt");
 
     !isLiked
-      ? addCardLike(id, token)
+      ? api
+          .addCardLike(id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((card) => (card._id === id ? updatedCard : card))
             );
           })
           .catch((err) => console.error(err))
-      : removeCardLike(id, token)
+      : api
+          .removeCardLike(id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((card) => (card._id === id ? updatedCard : card))
