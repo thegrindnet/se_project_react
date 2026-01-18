@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 
 import logo from "../../assets/logo.svg";
-// import avatar from "../../assets/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
@@ -31,7 +30,6 @@ function Header({
         />
       );
     }
-    //return first letter of name.
     const initial = currentUser?.name?.[0]?.toUpperCase() || "?";
     return (
       <div className="header__avatar header__avatar_placeholder">{initial}</div>

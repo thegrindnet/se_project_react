@@ -3,11 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Navigate, useNavigate } from "react-router-dom";
 
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
-import {
-  coordinates,
-  APIkey,
-  defaultClothingItems,
-} from "../../utils/constants";
+import { coordinates, APIkey } from "../../utils/constants";
 import {
   addItem,
   getItems,
@@ -47,16 +43,11 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentDate, setCurrentDate] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  // isDeleteModalOpen
-  // cardToDelete
-  // isLoading
-  // isDeleting
-  // isCanceling
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
   const navigate = useNavigate();
-  // useEffect to fetch today
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
@@ -91,7 +82,6 @@ function App() {
         .catch((err) => {
           console.error("Token validation failed:", err);
           localStorage.removeItem("jwt");
-          // setIsLoggedIn(false);
         });
     }
   }, []);
@@ -151,8 +141,6 @@ function App() {
           })
           .catch(console.error);
   };
-
-  // Update user?
 
   const handleRegistration = (userData) => {
     signup({
@@ -218,13 +206,9 @@ function App() {
       .catch(console.error);
   };
 
-  // handleCancel
-
   const closeActiveModal = () => {
     setActiveModal("");
   };
-
-  // openConfirmationModal
 
   const handleEditSubmit = ({ name, avatar }) => {
     const token = localStorage.getItem("jwt");
@@ -308,8 +292,6 @@ function App() {
             selectedCard={selectedCard}
             currentUser={currentUser}
             isOpen={activeModal === "preview"}
-            // isLoggedIn={isLoggedIn}
-            // onCardLike={handleCardLike}
           />
 
           <RegisterModal
