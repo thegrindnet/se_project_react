@@ -9,7 +9,7 @@ function ModalWithForm({
   onSecondButtonClick,
   closeActiveModal,
   onSubmit,
-  isButtonDisabled,
+  // isButtonDisabled,
 }) {
   return (
     <div className={`modal ${isOpen && "modal__opened"}`}>
@@ -27,7 +27,7 @@ function ModalWithForm({
             <button
               type="submit"
               className="modal__submit"
-              disabled={isButtonDisabled}
+              // disabled={isButtonDisabled}
             >
               {buttonText}
             </button>

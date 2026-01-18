@@ -333,7 +333,7 @@ function App() {
 
           <EditProfileModal
             closeActiveModal={closeActiveModal}
-            // onEditModalSubmit={handleEditSubmit}
+            onEditModalSubmit={handleEditSubmit}
             isOpen={activeModal === "edit-profile"}
           />
         </div>
