@@ -135,14 +135,18 @@ function App() {
       ? addCardLike(id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
-              cards.map((card) => (card._id === id ? updatedCard : card))
+              cards.map((card) =>
+                card._id === updatedCard.data._id ? updatedCard.data : card
+              )
             );
           })
           .catch((err) => console.error(err))
       : removeCardLike(id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
-              cards.map((card) => (card._id === id ? updatedCard : card))
+              cards.map((card) =>
+                card._id === updatedCard.data._id ? updatedCard.data : card
+              )
             );
           })
           .catch(console.error);
@@ -305,7 +309,7 @@ function App() {
             currentUser={currentUser}
             isOpen={activeModal === "preview"}
             // isLoggedIn={isLoggedIn}
-            onCardLike={handleCardLike}
+            // onCardLike={handleCardLike}
           />
 
           <RegisterModal
