@@ -12,6 +12,7 @@ export default function RegisterModal({
   const [avatar, setAvatar] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const isFormValid = name && email && avatar && password;
 
   useEffect(() => {
     if (isOpen) {
@@ -54,7 +55,7 @@ export default function RegisterModal({
       secondButtonText="or Log in"
       onSecondButtonClick={onSecondButtonClick}
       handleSignupClick={handleSignupClick}
-      // noValidate
+      isButtonDisabled={!isFormValid}
     >
       <label htmlFor="email" className="modal__label">
         Email*

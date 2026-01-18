@@ -10,6 +10,7 @@ export default function LoginModal({
 }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const isFormValid = email && password;
 
   useEffect(() => {
     if (isOpen) {
@@ -41,6 +42,7 @@ export default function LoginModal({
       buttonText="Log In"
       secondButtonText={"or Register"}
       closeActiveModal={closeActiveModal}
+      isButtonDisabled={!isFormValid}
       isOpen={isOpen}
       onSubmit={handleSubmit}
       switchModal={switchModal}
