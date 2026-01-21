@@ -2,15 +2,9 @@ import "./ItemModal.css";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function ItemModal({
-  activeModal,
-  closeActiveModal,
-  card,
-  handleDeleteClick,
-  selectedCard,
-}) {
+function ItemModal({ activeModal, closeActiveModal, card, handleDeleteClick }) {
   const currentUser = useContext(CurrentUserContext);
-  const isOwn = selectedCard.owner === currentUser?.currentUser?._id;
+  const isOwn = card?.owner === currentUser?._id;
 
   const handleDelete = () => {
     handleDeleteClick(card);

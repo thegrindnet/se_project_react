@@ -172,6 +172,7 @@ function App() {
         setCurrentUser(userData);
         setIsLoggedIn(true);
         closeActiveModal();
+        navigate("/");
       })
       .catch(console.error);
   };
@@ -193,16 +194,16 @@ function App() {
       .catch(console.error);
   };
 
-  const handleDeleteClick = (_id) => {
+  const handleDeleteClick = (card) => {
     const token = localStorage.getItem("jwt");
     const filteredArr = clothingItems.filter((item) => {
-      return item._id != selectedCard._id;
+      return item._id != card._id;
     });
 
-    removeItem(selectedCard._id, token)
+    removeItem(card._id, token)
       .then(() => {
         setClothingItems(filteredArr);
-        closeActiveModal(card);
+        closeActiveModal();
       })
       .catch(console.error);
   };
@@ -265,7 +266,6 @@ function App() {
                       clothingItems={clothingItems}
                       handleCardClick={handleCardClick}
                       handleAddClick={handleAddClick}
-                      currentUser={currentUser}
                       onEditProfile={handleEditProfileClick}
                       onLogout={handleLogout}
                       isLoggedIn={isLoggedIn}
@@ -289,8 +289,6 @@ function App() {
             card={selectedCard}
             closeActiveModal={closeActiveModal}
             handleDeleteClick={handleDeleteClick}
-            selectedCard={selectedCard}
-            currentUser={currentUser}
             isOpen={activeModal === "preview"}
           />
 
