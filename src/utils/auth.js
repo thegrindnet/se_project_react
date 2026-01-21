@@ -1,8 +1,6 @@
-const baseUrl = "http://localhost:3001";
+import { handleServerResponse } from "./api.js";
 
-const handleServerResponse = (res) => {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-};
+const baseUrl = "http://localhost:3001";
 
 export function getUserData(token) {
   return fetch(`${baseUrl}/users/me`, {
