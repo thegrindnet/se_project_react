@@ -46,26 +46,26 @@ export default function LoginModal({
       switchModal={switchModal}
       onSecondButtonClick={onSecondButtonClick}
     >
-      <label htmlFor="email" className="modal__label">
+      <label htmlFor="login-email" className="modal__label">
         Email*
         <input
           type="email"
           name="email"
           className="modal__input"
-          id="email"
+          id="login-email"
           placeholder="Enter your email"
           value={email}
           onChange={handleEmailChange}
           required
         />
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label htmlFor="login-password" className="modal__label">
         Password*
         <input
           type="password"
           name="password"
           className="modal__input"
-          id="password"
+          id="login-password"
           placeholder="Enter your password"
           minLength={8}
           maxLength={16}

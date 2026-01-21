@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
@@ -41,7 +41,6 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [currentDate, setCurrentDate] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -150,7 +149,10 @@ function App() {
       password: userData.password,
     })
       .then(() => {
-        handleLogin({ email: userData.email, password: userData.password });
+        return handleLogin({
+          email: userData.email,
+          password: userData.password,
+        });
       })
       .then((user) => {
         setIsLoggedIn(true);
@@ -164,7 +166,6 @@ function App() {
     signin({ email, password })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
-        // setIsLoggedIn(true);
         return getUserData(res.token);
       })
       .then((userData) => {
@@ -240,7 +241,6 @@ function App() {
               handleAddClick={handleAddClick}
               handleSignupClick={handleSignupClick}
               handleLoginClick={handleLoginClick}
-              currentDate={currentDate}
               weatherData={weatherData}
               isLoggedIn={isLoggedIn}
             />

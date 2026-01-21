@@ -55,13 +55,13 @@ export default function RegisterModal({
       onSecondButtonClick={onSecondButtonClick}
       handleSignupClick={handleSignupClick}
     >
-      <label htmlFor="email" className="modal__label">
+      <label htmlFor="register-email" className="modal__label">
         Email*
         <input
           type="email"
           name="email"
           className="modal__input"
-          id="email"
+          id="register-email"
           placeholder="Email"
           required
           onChange={handleEmailChange}
@@ -69,7 +69,7 @@ export default function RegisterModal({
         />
       </label>
 
-      <label htmlFor="password" className="modal__label">
+      <label htmlFor="register-password" className="modal__label">
         Password*
         <input
           type="password"
@@ -78,20 +78,20 @@ export default function RegisterModal({
           required
           minLength={8}
           maxLength={16}
-          id="password"
+          id="register-password"
           placeholder="Password"
           onChange={handlePasswordChange}
           value={password}
         />
       </label>
 
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="register-name" className="modal__label">
         Name*
         <input
           type="text"
           name="name"
           className="modal__input"
-          id="name"
+          id="register-name"
           placeholder="Name"
           onChange={handleNameChange}
           value={name}
@@ -99,13 +99,13 @@ export default function RegisterModal({
         />
       </label>
 
-      <label htmlFor="avatar" className="modal__label">
+      <label htmlFor="register-avatar" className="modal__label">
         Avatar URL*
         <input
           type="url"
           name="avatar"
           className="modal__input"
-          id="avatar"
+          id="register-avatar"
           placeholder="Avatar URL"
           onChange={handleAvatarChange}
           value={avatar}
