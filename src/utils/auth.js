@@ -1,5 +1,5 @@
 import { handleServerResponse } from "./api.js";
-import baseUrl from "./constants.js";
+import { baseUrl } from "./constants.js";
 
 export function getUserData(token) {
   return fetch(`${baseUrl}/users/me`, {
