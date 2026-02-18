@@ -1,6 +1,5 @@
 import { handleServerResponse } from "./api.js";
-
-const baseUrl = "http://localhost:3001";
+import { baseUrl } from "./constants.js";
 
 export function getUserData(token) {
   return fetch(`${baseUrl}/users/me`, {

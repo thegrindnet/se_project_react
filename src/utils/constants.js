@@ -76,3 +76,8 @@ export const coordinates = {
 };
 
 export const APIkey = "a9b88a473ea2498ae8aec36d9859970e";
+
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr-db.soon.it"
+    : "http://localhost:3001";
